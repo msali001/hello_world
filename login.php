@@ -20,7 +20,7 @@
             <div class="login-logo">
                 <b>LOGIN </b>PAGE
             </div>
-            <form action="LoginValidator" method="post">
+            <form action="" method="post">
             <div class="login-box-body">
               <!--  
                 <div class="alert alert-danger alert-dismissible">
