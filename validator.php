@@ -1,4 +1,5 @@
 <?php
+     require("connect.php");
      $name = $password = $url = "";
      if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $name = test_input($_POST["username"]);
@@ -34,5 +35,5 @@
           header('Location: ' . $url);
           die();
      }
-
+      mysqli_close($conn); 
 ?>
