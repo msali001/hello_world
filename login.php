@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>LET Administrator</title>
+        <title>PolyGuide | IPT &AMP; GPTC</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.6 -->
@@ -18,22 +19,25 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <b>LOGIN </b>PAGE
+                <b>Poly</b>GUIDE
             </div>
-            <form action="" method="post">
+            <form action="login" method="post">
             <div class="login-box-body">
-              <!--  
-                <div class="alert alert-danger alert-dismissible">
+                <div class="alert alert-danger alert-dismissible" id="error_box">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <i class="icon fa fa-ban"></i>
                     Invalid username or password
                 </div>
-               -->
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="username" name="regnum" required/>
+                <div class="alert alert-warning alert-dismissible" id="warning_box">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="icon fa fa-warning"></i>
+                    Login to Continue
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="datee" placeholder="password" />
+                    <input type="text" class="form-control" placeholder="Enter username" name="userid" required/>
+                </div>
+                <div class="form-group has-feedback">
+                    <input class="form-control" name="password" type="password" placeholder="Password" >
                 </div>
                 <div class="row">
                     <div class="col-xs-4 pull-right">
@@ -44,8 +48,34 @@
             </form>
         </div>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script  src="https://code.jquery.com/jquery-2.2.4.min.js"  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
 <!-- Bootstrap 3.3.6 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.extensions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.date.extensions.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(":input").inputmask();
+
+        });
+    </script>
+    <script>
+        var status = window.location.search;
+        status = status.replace("?status=", '');
+        document.getElementById("error_box").disabled = true;
+
+        if(status === "failed") {
+            $("#warning_box").remove();
+        }
+        else if (status === "login") {
+            $("#error_box").remove();
+        }
+        else {
+            $("#warning_box").remove();
+            $("#error_box").remove();
+        }
+    </script>
+
 </html>
