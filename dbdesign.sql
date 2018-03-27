@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS `login`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
+  `password` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_login_1` FOREIGN KEY (`id`) REFERENCES `registration` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -39,7 +40,6 @@ DROP TABLE IF EXISTS `registration`;
 CREATE TABLE `registration` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `address` varchar(150) NOT NULL,
   `email` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
