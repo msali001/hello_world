@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg1 {
+    background: #aaa url("22090061_1870908683224712_6144509151973692765_n.jpg") ;
+    width: 100%;
+    padding: 50;
+}
+.fakeimg2 {
+    background: #aaa url("Inst-image-2.jpg") ;
+    width: 100%;
+    padding: 50;
+}
+.fakeimg {
+    background: #aaa url("albert_einstein_quote-wallpaper-1920x1080.jpg") ;
+    width: 100%;
+    padding: 50;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    padding: 1px;
+    text-align: center;
+    background:  #283747 ;
+    margin-top: 1px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+div {
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+
+p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+}
+
+a {
+    text-decoration: none;
+    color: #008CBA;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Quotes Quara</h1>
+  <p>An Engineer is not only to study but also to Perform</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Student</a>
+  <a href="#">Staff</a>
+  <a href="#">Teachers</a>
+  <a href="#" style="float:right">Log In</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>GEC PKD</h2>
+      <h5>Govt engineering college sreekrishnapuram</h5>
+      <div class="fakeimg1" style="height:450px;">Life@Gec</div>
+      <p>Quotes and thoughts to be shared.</p>
+    </div>
+    <div class="card">
+      <h2>Enter the quote</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+     
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Quara</h2>
+      
+      <p>quara is developped by Sarath ms,Shahana samad,Archana c,Musthafa and Nikhil,it is our foss lab simple project demo</p>
+    </div>
+    <div class="card">
+     <div>
+<h1>Popular Post</h1>
+</div>
+      <div></div>
+     
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <h2>copyright@2018</h2>
+</div>
+<h2>Animated Button</h2>
+
+<button class="button" style="vertical-align:middle"><span>Hover </span></button>
+</body>
+</html>
+
