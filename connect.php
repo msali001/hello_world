@@ -1,6 +1,6 @@
 <?php
 $username = "root";
-$password = "rootuser";
+$password = "";
 $servername = "localhost:3306";
 $db = "foss_lab"; 
 

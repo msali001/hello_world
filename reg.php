@@ -2,12 +2,12 @@
     require 'connect.php';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $passwrod = $email = "";
-        $name = test_input($_POST["user"]);
+        $name = test_input($_POST["name"]);
         $passwrod = test_input($_POST["password"]);
         $email = test_input($_POST["email"]);
         
         $query = "INSERT INTO `foss_lab`.`registration` (`name`, `email`) VALUES ('$name', '$email')";
-        
+        echo $query;
         $retval = mysqli_query( $conn, $query );
             
             if(! $retval ) {
