@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `foss_lab` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `foss_lab`;
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
 -- Host: localhost    Database: foss_lab
@@ -31,6 +33,16 @@ CREATE TABLE `login` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES (3,'user');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `registration`
 --
 
@@ -43,8 +55,44 @@ CREATE TABLE `registration` (
   `email` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `registration`
+--
+
+LOCK TABLES `registration` WRITE;
+/*!40000 ALTER TABLE `registration` DISABLE KEYS */;
+INSERT INTO `registration` VALUES (3,'Musthafa Ali','ms@ali.com');
+/*!40000 ALTER TABLE `registration` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `thoughts`
+--
+
+DROP TABLE IF EXISTS `thoughts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `thoughts` (
+  `id` int(11) NOT NULL,
+  `heading` varchar(45) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_thoughts_1` FOREIGN KEY (`id`) REFERENCES `registration` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `thoughts`
+--
+
+LOCK TABLES `thoughts` WRITE;
+/*!40000 ALTER TABLE `thoughts` DISABLE KEYS */;
+INSERT INTO `thoughts` VALUES (3,'Fake','fdgdfgdffdgdfgdfgfdgdfg');
+/*!40000 ALTER TABLE `thoughts` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -55,4 +103,4 @@ CREATE TABLE `registration` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-26 20:34:51
+-- Dump completed on 2018-03-28  1:52:41

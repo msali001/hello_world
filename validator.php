@@ -1,14 +1,22 @@
 <?php
     require 'connect.php';
-    $name = $password = $url = "";
+    $name = $password = $url = $sql = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $name = test_input($_POST["user"]);
           $password = test_input($_POST["password"]);
           if(test_login($name,$password,$conn)) {
                $url = "index.php";
+               $sql = "SELECT `name` FROM foss_lab.registration WHERE email = '$name'";
+               $result = mysqli_query($conn, $sql);
                session_start();
-               $_SESSION['name'] = $name;
-          }
+               if (mysqli_num_rows($result) > 0) {
+                   $row = mysqli_fetch_assoc($result);
+                   $_SESSION['name'] = $row["name"];
+               }
+               else {
+                   $_SESSION['name'] = "User";
+               }
+            }
           else {
                $url = "login.php?status=failed";
           }
