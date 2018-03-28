@@ -13,9 +13,9 @@
         if(! $retval ) {
             echo 'errrrrrororrrrr';
         }
-        header('Location: ' . 'index2.php');
-        die();
 	 }
+	 header('Location: ' . 'index2.php');
+     die();
 
 
 	 function test_input($data) {
