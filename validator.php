@@ -6,12 +6,14 @@
           $password = test_input($_POST["password"]);
           if(test_login($name,$password,$conn)) {
                $url = "index.php";
-               $sql = "SELECT `name` FROM foss_lab.registration WHERE email = '$name'";
+               $sql = "SELECT `id`,`name` FROM foss_lab.registration WHERE email = '$name'";
                $result = mysqli_query($conn, $sql);
                session_start();
                if (mysqli_num_rows($result) > 0) {
                    $row = mysqli_fetch_assoc($result);
                    $_SESSION['name'] = $row["name"];
+				   $_SESSION['userid'] = $row["id"];
+				   
                }
                else {
                    $_SESSION['name'] = "User";

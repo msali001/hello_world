@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `foss_lab` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `foss_lab`;
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
 -- Host: localhost    Database: foss_lab
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.5.5-10.1.30-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -79,8 +79,8 @@ CREATE TABLE `thoughts` (
   `id` int(11) NOT NULL,
   `heading` varchar(45) NOT NULL,
   `text` text NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_thoughts_1` FOREIGN KEY (`id`) REFERENCES `registration` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_thoughts_1_idx` (`id`),
+  CONSTRAINT `fk_thoughts_1` FOREIGN KEY (`id`) REFERENCES `registration` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -90,7 +90,7 @@ CREATE TABLE `thoughts` (
 
 LOCK TABLES `thoughts` WRITE;
 /*!40000 ALTER TABLE `thoughts` DISABLE KEYS */;
-INSERT INTO `thoughts` VALUES (3,'Fake','fdgdfgdffdgdfgdfgfdgdfg');
+INSERT INTO `thoughts` VALUES (3,'Fake','fdgdfgdffdgdfgdfgfdgdfg'),(3,'fdfdhh','dfhfgdgdsghjhgjhg');
 /*!40000 ALTER TABLE `thoughts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -103,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-28  1:52:41
+-- Dump completed on 2018-03-28 10:40:08
