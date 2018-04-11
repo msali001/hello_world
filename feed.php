@@ -15,7 +15,7 @@
 		<td><input type="text" name="text"></td>
 		</tr>
 		<tr><td>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type= "submit" value= "SUBMIT"/></td></tr>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type= "submit" value= "      SUBMIT      "/></td></tr>
 		</form>
 </table>
 </html>

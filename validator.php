@@ -12,8 +12,7 @@
                if (mysqli_num_rows($result) > 0) {
                    $row = mysqli_fetch_assoc($result);
                    $_SESSION['name'] = $row["name"];
-				   $_SESSION['userid'] = $row["id"];
-				   
+		   $_SESSION['userid'] = $row["id"];
                }
                else {
                    $_SESSION['name'] = "User";
@@ -24,14 +23,12 @@
           }
           redirect($url);
      }
-     
      function test_input($data) {
           $data = trim($data);
           $data = stripslashes($data);
           $data = htmlspecialchars($data);
           return $data;
      }
-     
      function test_login($usr , $passwd,$conn) {
         if ($usr != "" && $passwd != "") {
             $sql = "SELECT l.id FROM login l, registration y where l.`password`='$passwd' and y.email = '$usr'";
