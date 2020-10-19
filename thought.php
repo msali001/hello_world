@@ -24,3 +24,4 @@
           $data = htmlspecialchars($data);
           return $data;
      }
+//this is a comment
