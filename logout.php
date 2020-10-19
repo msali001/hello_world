@@ -4,3 +4,4 @@
     header("location: login.php");
     die();                
 ?>
+//this is a comment
