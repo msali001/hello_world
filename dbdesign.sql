@@ -1,8 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `foss_lab` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `foss_lab`;
+---
+--- COMMENT ADDED
+---
 
-
-DROP TABLE IF EXISTS `login`;
+DROP TABLE IF EXISTS `register`;
 =
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
@@ -16,7 +18,7 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-LOCK TABLES `login` WRITE;
+LOCK TABLES `register` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
 INSERT INTO `login` VALUES (3,'user');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
@@ -26,7 +28,7 @@ UNLOCK TABLES;
 -- Table structure for table `registration`
 --
 
-DROP TABLE IF EXISTS `registration`;
+DROP TABLE IF NOT EXISTS `registration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `registration` (
